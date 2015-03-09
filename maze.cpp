@@ -84,12 +84,10 @@ int main(int argc, char *argv[]) {
     //draw();
 }
 
-/**
- * Read file
- *
- * *fn: file to read
- * return void
- */
+ /**
+  * Read file
+  * @param fn file to read
+  */
 void init(char *fn) {
     ifstream in;
     in.open(fn);
@@ -268,6 +266,10 @@ void clean() {
             if (G[i][j] != -1)
                 G[i][j] = MAX;
 }
+
+/**
+ * difficult to understand
+ */
 void prim() {
     PointSet plist;
     PathSet ps;

@@ -1,0 +1,235 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BLACK	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+BLUE	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+BUFSIZE	graphics.c	93;"	d	file:
+BUTTON_TEXT_LEN	graphics.c	92;"	d	file:
+CC	makefile	/^CC = g++$/;"	m
+CYAN	graphics.h	/^   CYAN, RED, DARKGREEN, MAGENTA};$/;"	e	enum:color_types
+DARKGREEN	graphics.h	/^   CYAN, RED, DARKGREEN, MAGENTA};$/;"	e	enum:color_types
+DARKGREY	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+DASHED	graphics.h	/^enum line_types {SOLID, DASHED};$/;"	e	enum:line_types
+EXE	makefile	/^EXE = maze$/;"	m
+EXED	makefile	/^EXED = mazed$/;"	m
+FLAGS	makefile	/^FLAGS = -O2$/;"	m
+FLAGSD	makefile	/^FLAGSD = -g$/;"	m
+G	maze.cpp	/^int **G;                    \/\/the whole graph G[][]$/;"	v
+GREEN	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+H	makefile	/^H = graphics.h maze.h$/;"	m
+LIB	makefile	/^LIB = -lX11 -lm$/;"	m
+LIB_DIR	makefile	/^LIB_DIR = -L\/usr\/X11R6\/lib$/;"	m
+LIGHTGREY	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+LessPath	maze.h	/^struct LessPath {$/;"	s
+MAGENTA	graphics.h	/^   CYAN, RED, DARKGREEN, MAGENTA};$/;"	e	enum:color_types
+MAX	maze.h	1;"	d
+MAXPIXEL	graphics.c	146;"	d	file:
+MAXPTS	graphics.h	10;"	d
+MAX_FONT_SIZE	graphics.c	89;"	d	file:
+MINPIXEL	graphics.c	147;"	d	file:
+MWIDTH	graphics.c	87;"	d	file:
+NUM_COLOR	graphics.h	4;"	d
+OBJ	makefile	/^OBJ = maze.o graphics.o$/;"	m
+OBJD	makefile	/^OBJD = mazed.o graphicsd.o$/;"	m
+OFF	graphics.c	1016;"	d	file:
+ON	graphics.c	1017;"	d	file:
+Obstacle	maze.h	/^        Obstacle(Point* a, Point* b):$/;"	f	class:Obstacle
+Obstacle	maze.h	/^        Obstacle(int llx, int lly, int urx, int ury)$/;"	f	class:Obstacle
+Obstacle	maze.h	/^class Obstacle {$/;"	c
+ObstacleVector	maze.h	/^typedef vector<Obstacle*>       ObstacleVector;$/;"	t
+PI	graphics.c	90;"	d	file:
+POSTSCRIPT	graphics.h	2;"	d
+Path	maze.h	/^typedef vector<Point*>          Path;$/;"	t
+PathSet	maze.h	/^typedef set<Path*, LessPath>    PathSet;$/;"	t
+PathVector	maze.h	/^typedef vector<Path*>           PathVector;$/;"	t
+Point	maze.h	/^        Point()$/;"	f	class:Point
+Point	maze.h	/^        Point(Point* p):$/;"	f	class:Point
+Point	maze.h	/^        Point(int a, int b):$/;"	f	class:Point
+Point	maze.h	/^class Point {$/;"	c
+PointSet	maze.h	/^typedef set<Point*>             PointSet;$/;"	t
+RED	graphics.h	/^   CYAN, RED, DARKGREEN, MAGENTA};$/;"	e	enum:color_types
+SCREEN	graphics.h	1;"	d
+SOLID	graphics.h	/^enum line_types {SOLID, DASHED};$/;"	e	enum:line_types
+SRC	makefile	/^SRC =  maze.cpp graphics.c$/;"	m
+T_AREA_HEIGHT	graphics.c	88;"	d	file:
+VERBOSE	graphics.c	19;"	d	file:
+WHITE	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+WINDOWSIZE	maze.h	2;"	d
+X11_INCLUDE	makefile	/^X11_INCLUDE = -I\/usr\/include$/;"	m
+XPOST	graphics.c	75;"	d	file:
+XTOWORLD	graphics.c	81;"	d	file:
+YELLOW	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	e	enum:color_types
+YPOST	graphics.c	76;"	d	file:
+YTOWORLD	graphics.c	82;"	d	file:
+adjustwin	graphics.c	/^static void adjustwin (void (*drawscreen) (void)) {  $/;"	f	file:
+angnorm	graphics.c	/^static float angnorm (float ang) {$/;"	f	file:
+build_default_menu	graphics.c	/^static void build_default_menu (void) {$/;"	f	file:
+build_textarea	graphics.c	/^static void build_textarea (void) {$/;"	f	file:
+button	graphics.c	/^static t_button *button;                 \/* [0..num_buttons-1] *\/$/;"	v	file:
+button_press	maze.cpp	/^static void button_press (float x, float y) {$/;"	f	file:
+clean	maze.cpp	/^void clean() {$/;"	f
+clearscreen	graphics.c	/^void clearscreen (void) { }$/;"	f
+clearscreen	graphics.c	/^void clearscreen (void) {$/;"	f
+close_graphics	graphics.c	/^void close_graphics (void) { }$/;"	f
+close_graphics	graphics.c	/^void close_graphics (void) {$/;"	f
+close_postscript	graphics.c	/^void close_postscript (void) { }$/;"	f
+close_postscript	graphics.c	/^void close_postscript (void) {$/;"	f
+color_types	graphics.h	/^enum color_types {WHITE, BLACK, DARKGREY, LIGHTGREY, BLUE, GREEN, YELLOW,$/;"	g
+colors	graphics.c	/^static int colors[NUM_COLOR];$/;"	v	file:
+completeGraph	maze.cpp	/^PathVector completeGraph;   $/;"	v
+create_button	graphics.c	/^void create_button (char *prev_button_text , char *button_text, $/;"	f
+create_button	graphics.c	/^void create_button (char *prev_button_text , char *button_text,$/;"	f
+currentcolor	graphics.c	/^static int currentcolor = BLACK;$/;"	v	file:
+currentfontsize	graphics.c	/^static int currentfontsize = 10;$/;"	v	file:
+currentlinestyle	graphics.c	/^static int currentlinestyle = SOLID;$/;"	v	file:
+currentlinewidth	graphics.c	/^static int currentlinewidth = 0;$/;"	v	file:
+delay	maze.cpp	/^static void delay (void) {$/;"	f	file:
+destroy_button	graphics.c	/^void destroy_button (char *button_text) { }$/;"	f
+destroy_button	graphics.c	/^void destroy_button (char *button_text) {$/;"	f
+disp_type	graphics.c	/^static int disp_type;    \/* Selects SCREEN or POSTSCRIPT *\/$/;"	v	file:
+display	graphics.c	/^static Display *display;$/;"	v	file:
+display_height	graphics.c	/^static unsigned int display_width, display_height;  \/* screen size *\/$/;"	v	file:
+display_width	graphics.c	/^static unsigned int display_width, display_height;  \/* screen size *\/$/;"	v	file:
+draw	maze.cpp	/^void draw() {$/;"	f
+draw_message	graphics.c	/^void draw_message (void) { }$/;"	f
+draw_message	graphics.c	/^void draw_message (void) {$/;"	f
+drawarc	graphics.c	/^void drawarc (float xc, float yc, float rad, float startang, $/;"	f
+drawarc	graphics.c	/^void drawarc (float xcen, float ycen, float rad, float startang,$/;"	f
+drawbut	graphics.c	/^static void drawbut (int bnum) {$/;"	f	file:
+drawline	graphics.c	/^void drawline (float x1, float y1, float x2, float y2) { }$/;"	f
+drawline	graphics.c	/^void drawline (float x1, float y1, float x2, float y2) {$/;"	f
+drawmenu	graphics.c	/^static void drawmenu(void) {$/;"	f	file:
+drawrect	graphics.c	/^void drawrect (float x1, float y1, float x2, float y2) { }$/;"	f
+drawrect	graphics.c	/^void drawrect (float x1, float y1, float x2, float y2) {$/;"	f
+drawscreen	maze.cpp	/^static void drawscreen (void) {$/;"	f	file:
+drawtext	graphics.c	/^void drawtext (float xc, float yc, char *text, float boundx) { }$/;"	f
+drawtext	graphics.c	/^void drawtext (float xc, float yc, char *text, float boundx) {$/;"	f
+event_loop	graphics.c	/^void event_loop (void (*act_on_button) (float x, float y), $/;"	f
+event_loop	graphics.c	/^void event_loop (void (*act_on_button) (float x, float y),$/;"	f
+fcn	graphics.c	/^            void (*fcn) (void (*drawscreen) (void));$/;"	m	struct:__anon2	file:
+fillarc	graphics.c	/^void fillarc (float xc, float yc, float rad, float startang, $/;"	f
+fillarc	graphics.c	/^void fillarc (float xcen, float ycen, float rad, float startang,$/;"	f
+fillpoly	graphics.c	/^void fillpoly (t_point *points, int npoints) { }$/;"	f
+fillpoly	graphics.c	/^void fillpoly (t_point *points, int npoints) {$/;"	f
+fillrect	graphics.c	/^void fillrect (float x1, float y1, float x2, float y2) { }$/;"	f
+fillrect	graphics.c	/^void fillrect (float x1, float y1, float x2, float y2) {$/;"	f
+flushinput	graphics.c	/^void flushinput (void) { }$/;"	f
+flushinput	graphics.c	/^void flushinput (void) {$/;"	f
+font_info	graphics.c	/^static XFontStruct *font_info[MAX_FONT_SIZE+1]; \/* Data for each size *\/$/;"	v	file:
+font_is_loaded	graphics.c	/^static int font_is_loaded[MAX_FONT_SIZE + 1];  \/* 1: loaded, 0: not  *\/$/;"	v	file:
+force_setcolor	graphics.c	/^static void force_setcolor (int cindex) {$/;"	f	file:
+force_setfontsize	graphics.c	/^static void force_setfontsize (int pointsize) {$/;"	f	file:
+force_setlinestyle	graphics.c	/^static void force_setlinestyle (int linestyle) {$/;"	f	file:
+force_setlinewidth	graphics.c	/^static void force_setlinewidth (int linewidth) {$/;"	f	file:
+gc	graphics.c	/^static GC gc, gcxor, gc_menus;$/;"	v	file:
+gc_menus	graphics.c	/^static GC gc, gcxor, gc_menus;$/;"	v	file:
+gcxor	graphics.c	/^static GC gc, gcxor, gc_menus;$/;"	v	file:
+height	graphics.c	/^typedef struct {int width; int height; int xleft; int ytop;$/;"	m	struct:__anon2	file:
+init	maze.cpp	/^void init(char *fn) {$/;"	f
+init_graphics	graphics.c	/^void init_graphics (char *window_name) { }$/;"	f
+init_graphics	graphics.c	/^void init_graphics (char *window_name) {$/;"	f
+init_postscript	graphics.c	/^int init_postscript (char *fname) { $/;"	f
+init_postscript	graphics.c	/^int init_postscript (char *fname) {$/;"	f
+init_world	graphics.c	/^void init_world (float x1, float y1, float x2, float y2) {$/;"	f
+init_world	graphics.c	/^void init_world (float xl, float yt, float xr, float yb) { }$/;"	f
+ispoly	graphics.c	/^            Window win; int istext; char text[BUTTON_TEXT_LEN]; int ispoly; $/;"	m	struct:__anon2	file:
+ispressed	graphics.c	/^            int poly[3][2]; int ispressed;} t_button;$/;"	m	struct:__anon2	file:
+istext	graphics.c	/^            Window win; int istext; char text[BUTTON_TEXT_LEN]; int ispoly; $/;"	m	struct:__anon2	file:
+line_types	graphics.h	/^enum line_types {SOLID, DASHED};$/;"	g
+ll	maze.h	/^        Point* ll;      \/\/the lower left corner$/;"	m	class:Obstacle
+load_font	graphics.c	/^static void load_font(int pointsize) {$/;"	f	file:
+main	maze.cpp	/^int main(int argc, char *argv[]) {$/;"	f
+map_button	graphics.c	/^static void map_button (int bnum) {$/;"	f	file:
+max	graphics.c	84;"	d	file:
+maze	maze.cpp	/^Path* maze(Point* s, Point* t) {$/;"	f
+mazegetTime	maze.cpp	/^double mazegetTime() {$/;"	f
+menu	graphics.c	/^static Window toplevel, menu, textarea;  \/* various windows *\/$/;"	v	file:
+menu_font_size	graphics.c	/^static const int menu_font_size = 14;   \/* Font for menus and dialog boxes. *\/$/;"	v	file:
+menutext	graphics.c	/^static void menutext(Window win, int xc, int yc, char *text) {$/;"	f	file:
+message	graphics.c	/^static char message[BUFSIZE] = "\\0"; \/* User message to display *\/$/;"	v	file:
+min	graphics.c	85;"	d	file:
+mst	maze.cpp	/^PathVector mst;             \/\/minimum spanning tree$/;"	v
+my_malloc	graphics.c	/^static void *my_malloc (size_t size) {$/;"	f	file:
+my_realloc	graphics.c	/^static void *my_realloc (void *ptr, size_t size) {$/;"	f	file:
+new_button_func	maze.cpp	/^static void new_button_func (void (*drawscreen_ptr) (void)) {$/;"	f	file:
+num_buttons	graphics.c	/^static int num_buttons;                  \/* Number of menu buttons *\/$/;"	v	file:
+obs	maze.cpp	/^ObstacleVector obs;         \/\/obstacles$/;"	v
+operator ()	maze.h	/^    bool operator ()(const Path* left, const Path* right) const {$/;"	f	struct:LessPath
+paths	maze.h	/^        PathVector* paths;$/;"	m	class:Point
+poly	graphics.c	/^            int poly[3][2]; int ispressed;} t_button;$/;"	m	struct:__anon2	file:
+postscript	graphics.c	/^static void postscript (void (*drawscreen) (void)) {$/;"	f	file:
+prim	maze.cpp	/^void prim() {$/;"	f
+print_graph	maze.cpp	/^void print_graph() {$/;"	f
+print_path	maze.cpp	/^void print_path(Path* path) {$/;"	f
+private_cmap	graphics.c	/^static Colormap private_cmap; \/* "None" unless a private cmap was allocated. *\/$/;"	v	file:
+proceed	graphics.c	/^static void proceed (void (*drawscreen) (void)) {$/;"	f	file:
+ps	graphics.c	/^static  FILE *ps;$/;"	v	file:
+ps_bot	graphics.c	/^static float ps_left, ps_right, ps_top, ps_bot; \/* Figure boundaries for *$/;"	v	file:
+ps_left	graphics.c	/^static float ps_left, ps_right, ps_top, ps_bot; \/* Figure boundaries for *$/;"	v	file:
+ps_right	graphics.c	/^static float ps_left, ps_right, ps_top, ps_bot; \/* Figure boundaries for *$/;"	v	file:
+ps_top	graphics.c	/^static float ps_left, ps_right, ps_top, ps_bot; \/* Figure boundaries for *$/;"	v	file:
+ps_xmult	graphics.c	/^static float ps_xmult, ps_ymult;     \/* Transformation for PostScript. *\/$/;"	v	file:
+ps_ymult	graphics.c	/^static float ps_xmult, ps_ymult;     \/* Transformation for PostScript. *\/$/;"	v	file:
+quit	graphics.c	/^static void quit (void (*drawscreen) (void)) {$/;"	f	file:
+rect_off_screen	graphics.c	/^static int rect_off_screen (float x1, float y1, float x2, float y2) {$/;"	f	file:
+retrace	maze.cpp	/^Path* retrace(Point* s, Point* t) {$/;"	f
+saved_xleft	graphics.c	/^static float saved_xleft, saved_xright, saved_ytop, saved_ybot; $/;"	v	file:
+saved_xright	graphics.c	/^static float saved_xleft, saved_xright, saved_ytop, saved_ybot; $/;"	v	file:
+saved_ybot	graphics.c	/^static float saved_xleft, saved_xright, saved_ytop, saved_ybot; $/;"	v	file:
+saved_ytop	graphics.c	/^static float saved_xleft, saved_xright, saved_ytop, saved_ybot; $/;"	v	file:
+screen_num	graphics.c	/^static int screen_num;$/;"	v	file:
+setcolor	graphics.c	/^void setcolor (int cindex) { }$/;"	f
+setcolor	graphics.c	/^void setcolor (int cindex) {$/;"	f
+setfontsize	graphics.c	/^void setfontsize (int pointsize) { }$/;"	f
+setfontsize	graphics.c	/^void setfontsize (int pointsize) {$/;"	f
+setlinestyle	graphics.c	/^void setlinestyle (int linestyle) { }$/;"	f
+setlinestyle	graphics.c	/^void setlinestyle (int linestyle) {$/;"	f
+setlinewidth	graphics.c	/^void setlinewidth (int linewidth) { }$/;"	f
+setlinewidth	graphics.c	/^void setlinewidth (int linewidth) {$/;"	f
+setpoly	graphics.c	/^static void setpoly (int bnum, int xc, int yc, int r, float theta) {$/;"	f	file:
+t_button	graphics.c	/^            int poly[3][2]; int ispressed;} t_button;$/;"	t	typeref:struct:__anon2	file:
+t_point	graphics.h	/^typedef struct {float x; float y;} t_point; \/* Used in calls to fillpoly *\/$/;"	t	typeref:struct:__anon1
+terms	maze.cpp	/^Path terms;                 \/\/terminals to be connected$/;"	v
+test_if_exposed	graphics.c	/^static Bool test_if_exposed (Display *disp, XEvent *event_ptr, $/;"	f	file:
+text	graphics.c	/^            Window win; int istext; char text[BUTTON_TEXT_LEN]; int ispoly; $/;"	m	struct:__anon2	file:
+textarea	graphics.c	/^static Window toplevel, menu, textarea;  \/* various windows *\/$/;"	v	file:
+top_height	graphics.c	/^static unsigned int top_width, top_height;      \/* window size *\/$/;"	v	file:
+top_width	graphics.c	/^static unsigned int top_width, top_height;      \/* window size *\/$/;"	v	file:
+toplevel	graphics.c	/^static Window toplevel, menu, textarea;  \/* various windows *\/$/;"	v	file:
+translate_down	graphics.c	/^static void translate_down (void (*drawscreen) (void)) {$/;"	f	file:
+translate_left	graphics.c	/^static void translate_left (void (*drawscreen) (void)) {$/;"	f	file:
+translate_right	graphics.c	/^static void translate_right (void (*drawscreen) (void)) {$/;"	f	file:
+translate_up	graphics.c	/^static void translate_up (void (*drawscreen) (void)) {$/;"	f	file:
+turn_on_off	graphics.c	/^static void turn_on_off (int pressed) {$/;"	f	file:
+unmap_button	graphics.c	/^static void unmap_button (int bnum) {$/;"	f	file:
+update_message	graphics.c	/^void update_message (char *msg) { }$/;"	f
+update_message	graphics.c	/^void update_message (char *msg) {$/;"	f
+update_ps_transform	graphics.c	/^static void update_ps_transform (void) {$/;"	f	file:
+update_transform	graphics.c	/^static void update_transform (void) {$/;"	f	file:
+update_win	graphics.c	/^static void update_win (int x[2], int y[2], void (*drawscreen)(void)) {$/;"	f	file:
+upperright	maze.cpp	/^Point* upperright;          \/\/the upper right point of the whole graph$/;"	v
+ur	maze.h	/^        Point* ur;      \/\/the upper right corner$/;"	m	class:Obstacle
+which_button	graphics.c	/^static int which_button (Window win) {$/;"	f	file:
+width	graphics.c	/^typedef struct {int width; int height; int xleft; int ytop;$/;"	m	struct:__anon2	file:
+win	graphics.c	/^            Window win; int istext; char text[BUTTON_TEXT_LEN]; int ispoly; $/;"	m	struct:__anon2	file:
+x	graphics.h	/^typedef struct {float x; float y;} t_point; \/* Used in calls to fillpoly *\/$/;"	m	struct:__anon1
+x	maze.h	/^        int x;$/;"	m	class:Point
+xcoord	graphics.c	/^static int xcoord (float worldx) {$/;"	f	file:
+xleft	graphics.c	/^static float xleft, xright, ytop, ybot;         \/* world coordinates *\/$/;"	v	file:
+xleft	graphics.c	/^typedef struct {int width; int height; int xleft; int ytop;$/;"	m	struct:__anon2	file:
+xmult	graphics.c	/^static float xmult, ymult;                  \/* Transformation factors *\/$/;"	v	file:
+xright	graphics.c	/^static float xleft, xright, ytop, ybot;         \/* world coordinates *\/$/;"	v	file:
+y	graphics.h	/^typedef struct {float x; float y;} t_point; \/* Used in calls to fillpoly *\/$/;"	m	struct:__anon1
+y	maze.h	/^        int y;$/;"	m	class:Point
+ybot	graphics.c	/^static float xleft, xright, ytop, ybot;         \/* world coordinates *\/$/;"	v	file:
+ycoord	graphics.c	/^static int ycoord (float worldy) {$/;"	f	file:
+ymult	graphics.c	/^static float xmult, ymult;                  \/* Transformation factors *\/$/;"	v	file:
+ytop	graphics.c	/^static float xleft, xright, ytop, ybot;         \/* world coordinates *\/$/;"	v	file:
+ytop	graphics.c	/^typedef struct {int width; int height; int xleft; int ytop;$/;"	m	struct:__anon2	file:
+zoom_fit	graphics.c	/^static void zoom_fit (void (*drawscreen) (void)) {$/;"	f	file:
+zoom_in	graphics.c	/^static void zoom_in (void (*drawscreen) (void)) {$/;"	f	file:
+zoom_out	graphics.c	/^static void zoom_out (void (*drawscreen) (void)) {$/;"	f	file:
+~Obstacle	maze.h	/^        ~Obstacle() {$/;"	f	class:Obstacle
