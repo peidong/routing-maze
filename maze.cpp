@@ -273,8 +273,8 @@ void clean() {
 void prim() {
     PointSet plist;
     PathSet ps;
-    Point* curP = terms[0];
-    for (int i = 0; i < terms.size() - 1; i++) {
+    Point* curP = terms[0];//to let curP's beginning be the terminal
+    for (int i = 0; i < terms.size() - 1; i++) {//for loop all terminals
         plist.insert(curP);
         for (PathVector::iterator spi = curP->paths->begin(); 
             spi != curP->paths->end(); spi++) {
