@@ -259,7 +259,9 @@ void print_graph() {
         cout << endl;
     }
 }
-
+/**
+ * to make G[][] become all 65535 when not obs(-1)
+ */
 void clean() {
     for (int i = 1; i <= upperright->x; i++)
         for (int j = 1; j <= upperright->y; j++)
