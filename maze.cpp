@@ -19,29 +19,66 @@ Path terms;                 //terminals to be connected
 ObstacleVector obs;         //obstacles
 PathVector completeGraph;   
 PathVector mst;             //minimum spanning tree
+int len;
 
 int main(int argc, char *argv[]) {
     
-    double beginTime = mazegetTime();//begin time
     cout << "Begin ..." << endl;
     init(argv[1]);//get the file name
 
+    /*
+    //part 1: finish prim() of MST
+    prim();
+
+    //print out MST
+    
+    cout << "Printing out MST ..." << endl;
+    for (PathVector::iterator spi = mst.begin(); spi != mst.end(); spi++) {
+        Path* sp = (*spi);
+        for (Path::iterator pi = sp->begin(); pi != sp->end(); pi++) {
+            G[(*pi)->x][(*pi)->y] = 1;
+        }
+    }
+    
+    //calculate wirelength
+    len = 0;
+    for (int i = 1; i <= upperright->x; i++)
+        for (int j = 1; j <= upperright->y; j++)
+            if(G[i][j] == 1)
+                len++;
+   
+    print_graph();
+    // write function to dump you results into a file called 
+    // "mst_result.txt"
+    // the content is the same as the printed content in print_graph();
+    
+    //String file_name = "mst_result.txt";
+    //dump_to_file(file_name);
+    clean();
+    */ 
+
+    // part 2: design your own routing algorithm
+    // the following is a skeleton of a maze routing
+    // the keep funtion maze() is not shown here
+    
+    double beginTime = mazegetTime();//begin time
     //find shortest path for each pair of terminals
     //And we calculate every two of the terminals' distance
     int termNum = terms.size();
     //termNum is the Num of Terminals
     for (int i = 0; i < termNum; i++)
         for (int j = i+1; j < termNum; j++) {
-            cout << "i=" << i << "," << "j=" << j << endl;
             Path* path = maze(terms[i], terms[j]);
             terms[i]->paths->push_back(path);
             terms[j]->paths->push_back(path);
             completeGraph.push_back(path);//add path at the end 
-            //cout << "Printing out graph for one shortest path ..." << endl;
+            cout << "Printing out graph for one shortest path ..." << endl;
             print_graph();
             print_path(path); 
             clean();
         }
+
+    double endTime = mazegetTime();
 
     //print out complete graph
     cout << "Printing out complete graph ..." << endl;
@@ -52,32 +89,18 @@ int main(int argc, char *argv[]) {
         }
     }
     print_graph();
-    //clean();
-
-    //print out MST
-    /*
-    cout << "Printing out MST ..." << endl;
-    prim();
-    for (PathVector::iterator spi = mst.begin(); spi != mst.end(); spi++) {
-        Path* sp = (*spi);
-        for (Path::iterator pi = sp->begin(); pi != sp->end(); pi++) {
-            G[(*pi)->x][(*pi)->y] = 1;
-        }
-    }
-    */
-
     //calculate wirelength
-    int len = 0;
+    len = 0;
     for (int i = 1; i <= upperright->x; i++)
         for (int j = 1; j <= upperright->y; j++)
             if(G[i][j] == 1)
                 len++;
     //print_graph();
-    //clean();
+    clean();
     
 
     cout << "Total wirelength:" << len << endl;
-    cout << "Total runtime:" << mazegetTime() - beginTime << " usec." << endl;
+    cout << "Total runtime:" << endTime - beginTime << " usec." << endl;
 
     cout << "Finished." << endl;
 
