@@ -26,6 +26,7 @@ int main(int argc, char *argv[]) {
     cout << "Begin ..." << endl;
     init(argv[1]);//get the file name
 
+    prim();
     /*
     //part 1: finish prim() of MST
     prim();
@@ -292,14 +293,12 @@ void clean() {
                 G[i][j] = MAX;
 }
 
-/**
- * difficult to understand
- */
 void prim() {
     PointSet plist;
     PathSet ps;
     Point* curP = terms[0];//to let curP's beginning be the terminal
     for (int i = 0; i < terms.size() - 1; i++) {//for loop all terminals
+//        cout << curP->x << curP->y <<endl;
         plist.insert(curP);
         for (PathVector::iterator spi = curP->paths->begin(); 
             spi != curP->paths->end(); spi++) {
@@ -307,7 +306,7 @@ void prim() {
         }
         Path* path = *ps.begin();
         //delete circle
-        while (plist.find((*path)[0]) != plist.end() 
+        while (plist.ifnd((*path)[0]) != plist.end() 
             && plist.find((*path)[path->size()-1]) != plist.end()) {
             ps.erase(ps.begin());
             path = *ps.begin();
