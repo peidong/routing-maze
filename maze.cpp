@@ -26,23 +26,6 @@ int main(int argc, char *argv[]) {
     cout << "Begin ..." << endl;
     init(argv[1]);//get the file name
 
-    PointSet ps;
-    cout<<"x="<<terms[0]->x<<",y="<<terms[0]->y<<endl;
-    cout<<"terms.size="<<terms.size()<<endl;
-    Path::iterator testspi=terms.begin();
-    cout<<"x="<<(*testspi)->x<<",y="<<(*testspi)->y<<endl;
-    if(testspi == terms.end()){
-        cout<<"testspi == terms.end()"<<endl;
-    }
-    else{
-        cout<<"testspi != terms.end()"<<endl;
-    }
-    ps.insert(*testspi);
-    testspi++;
-    cout<<"x="<<(*testspi)->x<<",y="<<(*testspi)->y<<endl;
-    ps.insert(*testspi);
-    cout<<"x="<<(*ps.begin())->x<<",y="<<(*testspi)->y<<endl;
-    prim();
     /*
     //part 1: finish prim() of MST
     prim();
@@ -315,10 +298,6 @@ void prim() {
     Point* curP = terms[0];//to let curP's beginning be the terminal
     for (int i = 0; i < terms.size() - 1; i++) {//for loop all terminals
         plist.insert(curP);
-        PathVector::iterator testspi = curP->paths->begin();
-        cout<<"line303"<<endl;
-        ps.insert((*testspi));
-        cout<<"line305"<<endl;
         for (PathVector::iterator spi = curP->paths->begin(); 
             spi != curP->paths->end(); spi++) {
             ps.insert((*spi));
