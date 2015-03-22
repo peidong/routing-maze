@@ -71,4 +71,4 @@ mazed.o:  maze.cpp $(H)
 	$(CC) -c $(FLAGSD)  maze.cpp
 
 clean:
-	rm -rf *.o mst_result.txt maze mazed
+	rm -rf *.o mst_result.txt routing_result.txt maze mazed

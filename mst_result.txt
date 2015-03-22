@@ -1,0 +1,16 @@
+Printing out MST ...
+Total wirelength of MST: 20
+
+ N |  N |  N |  N |  N |  N |  N |  N |  N |  N | 
+ N |  N |  N |  N |  N |  N |  N |  N |  1 |  N | 
+ N |  N |  N |  N |  N |  N |  N |  N |  1 |  N | 
+ N |  N |  N |  N |  N |  N |  N |  N |  1 |  N | 
+ N |  N |  N |  N |  N |  N |  N |  N |  1 |  N | 
+ 1 |  1 |  1 |  1 |  1 |  1 |  N |  N |  1 |  N | 
+ 1 | -1 | -1 | -1 | -1 |  1 |  N |  N |  1 |  N | 
+ N | -1 | -1 | -1 | -1 |  1 |  N |  N |  1 |  N | 
+ N | -1 | -1 |  N |  N |  1 |  1 |  1 |  1 |  N | 
+ N |  N |  N |  N |  N |  N |  N |  N |  N |  N | 
+Total wirelength of MST: 20
+
+Finished.

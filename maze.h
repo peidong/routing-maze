@@ -81,13 +81,15 @@ Path* retrace(Point* s, Point* t);
 
 void print_graph();
 
-void print_graph_to_file(char* fn);
+void print_graph_to_file(ofstream ofile);
 
 void print_path(Path* path);
 
 void clean();
 
 void prim();
+
+void myAlgorithm();
 
 void draw();
 

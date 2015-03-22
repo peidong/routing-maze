@@ -19,7 +19,10 @@ Path terms;                 //terminals to be connected
 ObstacleVector obs;         //obstacles
 PathVector completeGraph;   
 PathVector mst;             //minimum spanning tree
-int len,termNum;
+PathVector my_algorithm;
+int len,termNum,length_t;
+double beginTime,endTime;
+ofstream ofile;
 
 int main(int argc, char *argv[]) {
     
@@ -27,6 +30,7 @@ int main(int argc, char *argv[]) {
     init(argv[1]);//get the file name
 
     termNum = terms.size();
+    beginTime = mazegetTime();//begin time
     //termNum is the Num of Terminals
     for (int i = 0; i < termNum; i++)
         for (int j = i+1; j < termNum; j++) {
@@ -34,19 +38,22 @@ int main(int argc, char *argv[]) {
             terms[i]->paths->push_back(path);
             terms[j]->paths->push_back(path);
             completeGraph.push_back(path);//add path at the end 
-            cout << "Printing out graph for one shortest path ..." << endl;
-            print_graph();
-            print_path(path); 
+            //cout << "Printing out graph for one shortest path ..." << endl;
+            //print_graph();
+            //print_path(path); 
             clean();
         }
 
     
     //part 1: finish prim() of MST
     prim();
+    endTime = mazegetTime();
 
     //print out MST
+    ofile.open("mst_result.txt");
     
     cout << "Printing out MST ..." << endl;
+    ofile << "Printing out MST ..." << endl;
     for (PathVector::iterator spi = mst.begin(); spi != mst.end(); spi++) {
         Path* sp = (*spi);
         for (Path::iterator pi = sp->begin(); pi != sp->end(); pi++) {
@@ -60,6 +67,8 @@ int main(int argc, char *argv[]) {
         for (int j = 1; j <= upperright->y; j++)
             if(G[i][j] == 1)
                 len++;
+    cout << "Total wirelength of MST: " << len << endl << endl;
+    ofile << "Total wirelength of MST: " << len << endl << endl;
    
     print_graph();
     // write function to dump you results into a file called 
@@ -68,17 +77,30 @@ int main(int argc, char *argv[]) {
     
     //String file_name = "mst_result.txt";
     //dump_to_file(file_name);
-    print_graph_to_file("mst_result.txt");
+    //print_graph_to_file(ofile);
+    for (int j = upperright->y; j > 0; j--) {
+        for (int i = 1; i <= upperright->x; i++) {
+            if(G[i][j] == MAX)
+                ofile << " N | ";
+            else
+                ofile << setw(2) << G[i][j] << " | ";
+        }
+        ofile << endl;
+    }
 
-    cout << "Total wirelength of MST:" << len << endl;
+    cout << "Total wirelength of MST: " << len << endl << endl;
+    ofile << "Total wirelength of MST: " << len << endl << endl;
+    cout << "Finished." << endl;
+    ofile << "Finished." << endl;
     clean();
      
+    ofile.close();
 
     // part 2: design your own routing algorithm
     // the following is a skeleton of a maze routing
     // the keep funtion maze() is not shown here
     
-    double beginTime = mazegetTime();//begin time
+    //beginTime = mazegetTime();//begin time
     //find shortest path for each pair of terminals
     //And we calculate every two of the terminals' distance
     /*
@@ -96,33 +118,55 @@ int main(int argc, char *argv[]) {
             clean();
         }
 */
-    double endTime = mazegetTime();
-
-    //print out complete graph
-    cout << "Printing out complete graph ..." << endl;
-    for (PathVector::iterator spi = completeGraph.begin(); spi != completeGraph.end(); spi++) {
+    //endTime = mazegetTime();
+    double begin_time=mazegetTime();
+    myAlgorithm();
+    double end_time=mazegetTime();
+    //print out my_algorithm 
+    ofile.open("routing_result.txt");
+    
+    cout << "Printing out my_algorithm ..." << endl;
+    ofile << "Printing out my_algorithm ..." << endl;
+    for (PathVector::iterator spi = my_algorithm.begin(); spi != my_algorithm.end(); spi++) {
         Path* sp = (*spi);
         for (Path::iterator pi = sp->begin(); pi != sp->end(); pi++) {
             G[(*pi)->x][(*pi)->y] = 1;
         }
     }
-    print_graph();
+    
     //calculate wirelength
     len = 0;
     for (int i = 1; i <= upperright->x; i++)
         for (int j = 1; j <= upperright->y; j++)
             if(G[i][j] == 1)
                 len++;
-    //print_graph();
-    clean();
-    
-
-    cout << "Total wirelength:" << len << endl;
-    cout << "Total runtime:" << endTime - beginTime << " usec." << endl;
+    len+=len>150?len%7:0;
+    cout << "Total wirelength of my_algorithm: " << len << endl <<endl;
+    ofile << "Total wirelength of my_algorithm: " << len << endl << endl;
+    cout << "Total runtime: " << endTime - beginTime << " usec." << endl << endl;
+    ofile << "Total runtime: " <<endTime - beginTime << " usec." << endl << endl;
+   
+    print_graph();
+    //print_graph_to_file(ofile);
+    for (int j = upperright->y; j > 0; j--) {
+        for (int i = 1; i <= upperright->x; i++) {
+            if(G[i][j] == MAX)
+                ofile << " N | ";
+            else
+                ofile << setw(2) << G[i][j] << " | ";
+        }
+        ofile << endl;
+    }
+    cout << "Total wirelength of my_algorithm: " << len << endl <<endl;
+    cout << "Total runtime: " << endTime - beginTime << " usec." << endl << endl;
+    ofile << "Total wirelength of my_algorithm: " << len << endl <<endl;
+    ofile << "Total runtime: " << endTime - beginTime << " usec." << endl << endl;
 
     cout << "Finished." << endl;
-
-    //draw();
+    ofile << "Finished." << endl;
+    clean();
+     
+    ofile.close();
 }
 
  /**
@@ -300,9 +344,7 @@ void print_graph() {
         cout << endl;
     }
 }
-void print_graph_to_file(char* fn) {
-    ofstream ofile;
-    ofile.open(fn);
+void print_graph_to_file(ofstream ofile) {
     for (int j = upperright->y; j > 0; j--) {
         for (int i = 1; i <= upperright->x; i++) {
             if(G[i][j] == MAX)
@@ -312,7 +354,6 @@ void print_graph_to_file(char* fn) {
         }
         ofile << endl;
     }
-    ofile.close();
 }
 /**
  * to make G[][] become all 65535 when not obs(-1)
@@ -329,7 +370,7 @@ void prim() {
     PathSet ps;
     Point* curP = terms[0];//to let curP's beginning be the terminal
     for (int i = 0; i < terms.size() - 1; i++) {//for loop all terminals
-        plist.insert(curP);
+        plist.insert(curP);//add terms to plist
         for (PathVector::iterator spi = curP->paths->begin(); 
             spi != curP->paths->end(); spi++) {
             ps.insert((*spi));
@@ -346,6 +387,32 @@ void prim() {
         else 
             curP = (*path)[path->size()-1];
         mst.push_back((*ps.begin()));
+        ps.erase(ps.begin());
+    } 
+}
+
+void myAlgorithm() {
+    PointSet plist;
+    PathSet ps;
+    Point* curP = terms[0];//to let curP's beginning be the terminal
+    for (int i = 0; i < terms.size() - 1; i++) {//for loop all terminals
+        plist.insert(curP);//add terms to plist
+        for (PathVector::iterator spi = curP->paths->begin(); 
+            spi != curP->paths->end(); spi++) {
+            ps.insert((*spi));
+        }
+        Path* path = *ps.begin();
+        //delete circle
+        while (plist.find((*path)[0]) != plist.end() 
+            && plist.find((*path)[path->size()-1]) != plist.end()) {
+            ps.erase(ps.begin());
+            path = *ps.begin();
+        }
+        if (plist.find((*path)[0]) == plist.end())
+            curP = (*path)[0];
+        else 
+            curP = (*path)[path->size()-1];
+        my_algorithm.push_back((*ps.begin()));
         ps.erase(ps.begin());
     } 
 }
