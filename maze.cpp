@@ -19,14 +19,28 @@ Path terms;                 //terminals to be connected
 ObstacleVector obs;         //obstacles
 PathVector completeGraph;   
 PathVector mst;             //minimum spanning tree
-int len;
+int len,termNum;
 
 int main(int argc, char *argv[]) {
     
     cout << "Begin ..." << endl;
     init(argv[1]);//get the file name
 
-    /*
+    termNum = terms.size();
+    //termNum is the Num of Terminals
+    for (int i = 0; i < termNum; i++)
+        for (int j = i+1; j < termNum; j++) {
+            Path* path = maze(terms[i], terms[j]);
+            terms[i]->paths->push_back(path);
+            terms[j]->paths->push_back(path);
+            completeGraph.push_back(path);//add path at the end 
+            cout << "Printing out graph for one shortest path ..." << endl;
+            print_graph();
+            print_path(path); 
+            clean();
+        }
+
+    
     //part 1: finish prim() of MST
     prim();
 
@@ -54,8 +68,11 @@ int main(int argc, char *argv[]) {
     
     //String file_name = "mst_result.txt";
     //dump_to_file(file_name);
+    print_graph_to_file("mst_result.txt");
+
+    cout << "Total wirelength of MST:" << len << endl;
     clean();
-    */ 
+     
 
     // part 2: design your own routing algorithm
     // the following is a skeleton of a maze routing
@@ -64,6 +81,7 @@ int main(int argc, char *argv[]) {
     double beginTime = mazegetTime();//begin time
     //find shortest path for each pair of terminals
     //And we calculate every two of the terminals' distance
+    /*
     int termNum = terms.size();
     //termNum is the Num of Terminals
     for (int i = 0; i < termNum; i++)
@@ -77,7 +95,7 @@ int main(int argc, char *argv[]) {
             print_path(path); 
             clean();
         }
-
+*/
     double endTime = mazegetTime();
 
     //print out complete graph
@@ -281,6 +299,20 @@ void print_graph() {
         }
         cout << endl;
     }
+}
+void print_graph_to_file(char* fn) {
+    ofstream ofile;
+    ofile.open(fn);
+    for (int j = upperright->y; j > 0; j--) {
+        for (int i = 1; i <= upperright->x; i++) {
+            if(G[i][j] == MAX)
+                ofile << " N | ";
+            else
+                ofile << setw(2) << G[i][j] << " | ";
+        }
+        ofile << endl;
+    }
+    ofile.close();
 }
 /**
  * to make G[][] become all 65535 when not obs(-1)
