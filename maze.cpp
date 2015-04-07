@@ -7,8 +7,8 @@
 #include <sys/resource.h>
 #include <math.h>
 #include "graphics.h"
-#include <cstdlib> 
-#include <cstdio> 
+#include <cstdlib>
+#include <cstdio>
 #include <vector>
 
 using namespace std;
@@ -17,7 +17,7 @@ int **G;                    //the whole graph G[][]
 Point* upperright;          //the upper right point of the whole graph
 Path terms;                 //terminals to be connected
 ObstacleVector obs;         //obstacles
-PathVector completeGraph;   
+PathVector completeGraph;
 PathVector mst;             //minimum spanning tree
 PathVector my_algorithm;
 int len,termNum,length_t;
@@ -25,7 +25,7 @@ double beginTime,endTime;
 ofstream ofile;
 
 int main(int argc, char *argv[]) {
-    
+
     cout << "Begin ..." << endl;
     init(argv[1]);//get the file name
 
@@ -48,10 +48,10 @@ int main(int argc, char *argv[]) {
     //part 1: finish prim() of MST
     prim();
     endTime = mazegetTime();
-
+    
     //print out MST
     ofile.open("mst_result.txt");
-    
+
     cout << "Printing out MST ..." << endl;
     ofile << "Printing out MST ..." << endl;
     for (PathVector::iterator spi = mst.begin(); spi != mst.end(); spi++) {
@@ -69,7 +69,6 @@ int main(int argc, char *argv[]) {
                 len++;
     cout << "Total wirelength of MST: " << len << endl << endl;
     ofile << "Total wirelength of MST: " << len << endl << endl;
-   
     print_graph();
     // write function to dump you results into a file called 
     // "mst_result.txt"
